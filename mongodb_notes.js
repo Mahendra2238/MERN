@@ -135,6 +135,20 @@ db.cars.aggregate([{ $project: { rounded: { $round: ["$price", -3] } } }])      
 db.cars.aggregate([{ $project: { absVal: { $abs: -120 } } }])                          // $abs → absolute value
 db.cars.aggregate([{ $project: { ceilPrice: { $ceil: "$price" } } }])                  // $ceil → round up
 
+// --- ROUNDING OPERATORS ---
+
+// $round → rounds to nearest (0.5 goes away from zero)
+db.test.aggregate([{ $project: { val: { $round: [12.5, 0] } } }])   // 13
+db.test.aggregate([{ $project: { val: { $round: [-12.5, 0] } } }])  // -13
+
+// $ceil → always rounds UP
+db.test.aggregate([{ $project: { val: { $ceil: 12.3 } } }])         // 13
+db.test.aggregate([{ $project: { val: { $ceil: -12.3 } } } }])      // -12
+
+// $floor → always rounds DOWN
+db.test.aggregate([{ $project: { val: { $floor: 12.7 } } }])        // 12
+db.test.aggregate([{ $project: { val: { $floor: -12.7 } } }])       // -13
+
 
 // --- CONDITIONAL OPERATORS ---
 
