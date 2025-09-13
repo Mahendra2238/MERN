@@ -1,0 +1,173 @@
+:root {
+  --color-primary-start: #667eea;
+  --color-primary-end: #764ba2;
+  --color-btn-capture-start: #f093fb;
+  --color-btn-capture-end: #f5576c;
+  --color-btn-upload-start: #4facfe;
+  --color-btn-upload-end: #00f2fe;
+  --color-white: #fff;
+  --border-radius: 15px;
+  --btn-border-radius: 25px;
+  --box-shadow-app: 0 10px 30px rgba(0, 0, 0, 0.2);
+  --box-shadow-btn: 0 4px 15px rgba(0, 0, 0, 0.2);
+  --box-shadow-btn-hover-capture: 0 6px 20px rgba(245, 87, 108, 0.4);
+  --box-shadow-preview: 0 8px 25px rgba(0, 0, 0, 0.3);
+  --text-shadow-app-heading: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  --text-shadow-preview-heading: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  --transition-default: all 0.3s ease;
+  --font-weight-bold: bold;
+  --font-size-app-heading: clamp(1.8rem, 4vw, 2.5rem);
+  --font-size-preview-heading: clamp(1.4rem, 3vw, 1.8rem);
+  --font-size-btn: clamp(1rem, 2vw, 1.1rem);
+  --padding-app-container: 30px;
+  --padding-btn: 12px 25px;
+  --gap-app-container: 20px;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(1rem, 2vw, 2rem);
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: clamp(1rem, 2vw, 2em);
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Webcam App Styles */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-app-container);
+  padding: var(--padding-app-container);
+  border-radius: var(--border-radius);
+  background: linear-gradient(135deg, var(--color-primary-start) 0%, var(--color-primary-end) 100%);
+  max-width: 450px;
+  margin: 0 auto;
+  box-shadow: var(--box-shadow-app);
+  color: var(--color-white);
+  backdrop-filter: saturate(180%) blur(10px);
+}
+
+.app-heading {
+  font-size: var(--font-size-app-heading);
+  color: var(--color-white);
+  margin-bottom: 10px;
+  text-shadow: var(--text-shadow-app-heading);
+  font-weight: var(--font-weight-bold);
+}
+
+.button-container {
+  display: flex;
+  gap: 15px;
+}
+
+.capture-btn, .upload-btn {
+  padding: var(--padding-btn);
+  font-size: var(--font-size-btn);
+  border: none;
+  border-radius: var(--btn-border-radius);
+  cursor: pointer;
+  transition: var(--transition-default);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: var(--box-shadow-btn);
+}
+
+.capture-btn {
+  background: linear-gradient(45deg, var(--color-btn-capture-start), var(--color-btn-capture-end));
+  color: var(--color-white);
+}
+
+.capture-btn:hover {
+  background: linear-gradient(45deg, var(--color-btn-capture-end), var(--color-btn-capture-start));
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-btn-hover-capture);
+}
+
+.upload-btn {
+  background: linear-gradient(45deg, var(--color-btn-upload-start), var(--color-btn-upload-end));
+  color: var(--color-white);
+}
+
+.upload-btn:hover:not(:disabled) {
+  background: linear-gradient(45deg, var(--color-btn-upload-end), var(--color-btn-upload-start));
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-btn-hover-upload);
+}
+
+.upload-btn:disabled {
+  background: linear-gradient(45deg, #ccc, #aaa);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.preview-section {
+  text-align: center;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.preview-heading {
+  font-size: var(--font-size-preview-heading);
+  color: var(--color-white);
+  margin-bottom: 15px;
+  text-shadow: var(--text-shadow-preview-heading);
+}
+
+.preview-image {
+  border: 3px solid var(--color-white);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow-preview);
+  transition: transform 0.3s ease;
+}
+
+.preview-image:hover {
+  transform: scale(1.05);
+}
