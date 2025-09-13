@@ -93,11 +93,3 @@ Below are some screenshots demonstrating the output and flow of the application:
     <p>Screenshot 4</p>
   </div>
 </div>
-
-## License
-
-This project is licensed under the ISC License.
-
-## Author
-
-Your Name Here
