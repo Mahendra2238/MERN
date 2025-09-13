@@ -34,6 +34,24 @@ The frontend allows users to:
 - Upload the image to the backend server
 - View previously uploaded images fetched from the backend
 
+
+## 📸 Preview
+
+<div align="center">
+  <table>
+    <tr>
+      <td><img src="webcapture.png" alt="login" width="400"/></td>
+      <td><img src="success.png" alt="welcome" width="400"/></td>
+    </tr>
+    <tr>
+      <td><img src="preview.png" alt="register" width="400"/></td>
+      <td><img src="gallery.png" alt="ap" width="400"/></td>
+    </tr>
+  </table>
+</div>
+
+
+
 ## Getting Started
 
 ### Prerequisites
@@ -99,3 +117,4 @@ This project is licensed under the ISC License.
 ## Author
 
 [Your Name Here]
+
