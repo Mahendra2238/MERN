@@ -120,6 +120,3 @@ FRONTEND_URL=http://localhost:3000
 4. Push to the branch
 5. Create a Pull Request
 
-## License
-
-This project is licensed under the MIT License.
